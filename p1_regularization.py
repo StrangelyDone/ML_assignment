@@ -161,9 +161,9 @@ def make_final_prediction(best_weights, inputFileName, outputFileName):
 
 
 def main():
-    best_lambda, best_weights, feature_degrees = find_best_weights("IMT2024003_train_var1.csv", debug=True)
+    best_lambda, best_weights, feature_degrees = find_best_weights("./train/IMT2024003_train_var1.csv", debug=True)
     summarize_feature_degrees(best_weights, feature_degrees)
-    make_final_prediction(best_weights, "IMT2024003_test_var1.csv", "IMT2024003_pred_var1.csv")
+    make_final_prediction(best_weights, "./test/IMT2024003_test_var1.csv", "./pred/IMT2024003_pred_var1.csv")
 
 if __name__ == "__main__":
     main()

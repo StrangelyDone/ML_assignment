@@ -124,7 +124,7 @@ def find_best_weights(inputFileName, debug=True):
 
     return best_lambda, best_weights, feature_degrees
 
-
+#this func is made using help from AI, just like in p1_regularization.py ..!
 def summarize_feature_degrees(best_weights, feature_degrees):
     #identify which features survived the L1 regularization (excluding microscopic floating-point noise)
     non_zero_mask = np.abs(best_weights.ravel()) > 1e-12
@@ -169,9 +169,9 @@ def make_final_prediction(best_weights, inputFileName, outputFileName):
 
 
 def main():
-    best_lambda, best_weights, feature_degrees = find_best_weights("IMT2024003_train_var2.csv")
+    best_lambda, best_weights, feature_degrees = find_best_weights("./train/IMT2024003_train_var2.csv")
     summarize_feature_degrees(best_weights, feature_degrees)
-    make_final_prediction(best_weights,"IMT2024003_test_var2.csv" , "IMT2024003_pred_var2.csv")
+    make_final_prediction(best_weights,"./test/IMT2024003_test_var2.csv" , "./pred/IMT2024003_pred_var2.csv")
 
 
 if __name__ == "__main__":
